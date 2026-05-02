@@ -63,7 +63,7 @@ h1, h2, h3 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 /* Navbar */
@@ -202,16 +202,17 @@ nav {
 
 /* Sections */
 section {
-  padding: 100px 0;
+  padding: 180px 0; /* Increased from 140px */
 }
 
 .section-header {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem; /* Increased from 4rem */
 }
 
 .section-header h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  padding-top: 4rem;
 }
 
 .section-header p {
@@ -301,7 +302,8 @@ footer {
 /* Contact Form Styles */
 .contact-card {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 4rem auto 0; /* Added more top margin */
+  margin-bottom: 4rem
 }
 
 .form-grid {
