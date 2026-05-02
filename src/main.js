@@ -25,17 +25,34 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   // Dynamic Navbar transparency
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      nav.style.background = 'rgba(10, 10, 10, 0.98)';
-      nav.style.padding = '1rem 0';
-      nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+      nav.classList.add('scrolled');
     } else {
-      nav.style.background = 'rgba(10, 10, 10, 0.8)';
-      nav.style.padding = '1.5rem 0';
-      nav.style.boxShadow = 'none';
+      nav.classList.remove('scrolled');
     }
   });
 
